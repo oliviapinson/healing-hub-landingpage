@@ -16,6 +16,13 @@ export const Contact = (props) => {
   };
   const clearState = () => setState({ ...initialState });
 
+  const myStyle = {
+    fontSize: '20px',
+  };
+  const headerStyle = {
+    fontSize: '28px',
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name, email, message);
@@ -96,66 +103,35 @@ export const Contact = (props) => {
           </div>
           <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
-              <h3>Contact Info</h3>
+              <h3 style={headerStyle}>Contact Info</h3>
               <p>
                 <span>
-                  <i className="fa fa-map-marker"></i> Address
+                  <i className="fa fa-map-marker" style={headerStyle}></i> Address
                 </span>
-                {props.data ? props.data.address : "loading"}
+                <div style={myStyle}>{props.data ? props.data.address : "loading"}</div>
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-phone"></i> Phone
+                  <i className="fa fa-phone" style={headerStyle}></i> Phone
                 </span>{" "}
-                {props.data ? props.data.phone : "loading"}
+                <div style={myStyle}>{props.data ? props.data.phone : "loading"}</div>
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-envelope-o"></i> Email
+                  <i className="fa fa-envelope-o" style={headerStyle}></i> Email
                 </span>{" "}
-                {props.data ? props.data.email : "loading"}
+                <div style={myStyle}>{props.data ? props.data.email : "loading"}</div>
               </p>
             </div>
           </div>
-          <div className="col-md-12">
-            <div className="row">
-              <div className="social">
-                <ul>
-                  <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.twitter : "/"}>
-                      <i className="fa fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.youtube : "/"}>
-                      <i className="fa fa-youtube"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
-      <div id="footer">
-        <div className="container text-center">
-          <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
-          </p>
-        </div>
-      </div>
+
     </div>
   );
 };

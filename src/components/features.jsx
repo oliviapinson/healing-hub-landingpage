@@ -1,4 +1,5 @@
 import React from "react";
+import { FigmaDesign } from "./figmadesign";
 
 export const Features = (props) => {
   return (
@@ -7,6 +8,7 @@ export const Features = (props) => {
         <div className="col-md-10 col-md-offset-1 section-title">
           <h2>Features</h2>
         </div>
+        <FigmaDesign />
         <div className="row">
           {props.data
             ? props.data.map((d, i) => (

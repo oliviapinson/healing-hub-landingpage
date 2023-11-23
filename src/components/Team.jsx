@@ -5,16 +5,16 @@ export const Team = (props) => {
     <div id="team" className="text-center">
       <div className="container">
         <div className="col-md-8 col-md-offset-2 section-title">
-          <h2>Meet the Team</h2>
+          <h2>Meet Our Team</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+            We are a team of 2 students at the University of Florida who are passionate about 
+            creating a healing community and helping others.
           </p>
         </div>
         <div id="row">
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-3 col-sm-6 team">
+                <div key={`${d.name}-${i}`} className={`col-md-12 col-sm-6 team`}>
                   <div className="thumbnail">
                     {" "}
                     <img src={d.img} alt="..." className="team-img" />

@@ -1,21 +1,21 @@
 {
   "Header": {
-    "title": "landing page with interest form",
-    "paragraph": "if we could add an interest form here that'd be good but we might need to connect it to mongo db or something"
+    "title": "Welcome to Healing Hub",
+    "paragraph": "Embarking on a surgical journey can be both a daunting and transformative experience. At Healing Hub, we understand that the path to recovery is not meant to be walked alone. That's why we've created a dedicated space for individuals like you, gearing up for surgery or navigating the post-operative phase."
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "paragraph": "Our mission is to build a community with those sharing the same condition or undergoing pre/post-surgery care.",
     "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
+      "Emotional Support",
+      "Shared Understanding",
+      "Information Exchange",
+      "Reducing Isolation"
     ],
     "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
+      "Motivation and Inspiration",
+      "Practical Advice",
+      "Advocacy and Empowerment",
+      "Mental Health Benefits"
     ]
   },
   "Gallery": [
@@ -132,23 +132,13 @@
   "Team": [
     {
       "img": "img/team/01.jpg",
-      "name": "John Doe",
-      "job": "Director"
+      "name": "Olivia Pinson",
+      "job": "CEO"
     },
     {
       "img": "img/team/02.jpg",
-      "name": "Mike Doe",
+      "name": "Eric Mercier",
       "job": "Senior Designer"
-    },
-    {
-      "img": "img/team/03.jpg",
-      "name": "Jane Doe",
-      "job": "Senior Designer"
-    },
-    {
-      "img": "img/team/04.jpg",
-      "name": "Karen Doe",
-      "job": "Project Manager"
     }
   ],
   "Contact": {

@@ -11,12 +11,12 @@ export const Team = (props) => {
             creating a healing community and helping others.
           </p>
         </div>
-        <div id="row">
+      
+        <div className="row">
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className={`col-md-12 col-sm-6 team`}>
+                <div key={`${d.name}-${i}`} className={`col-md-6 col-sm-12 team`}>
                   <div className="thumbnail">
-                    {" "}
                     <img src={d.img} alt="..." className="team-img" />
                     <div className="caption">
                       <h4>{d.name}</h4>
@@ -27,6 +27,8 @@ export const Team = (props) => {
               ))
             : "loading"}
         </div>
+
+
       </div>
     </div>
   );

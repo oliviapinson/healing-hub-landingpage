@@ -1,43 +1,38 @@
-import { useState } from "react";
-import emailjs from "emailjs-com";
-import React from "react";
+import React, { useState } from "react";
 
-const initialState = {
-  name: "",
-  email: "",
-  message: "",
-};
-export const Contact = (props) => {
-  const [{ name, email, message }, setState] = useState(initialState);
+export const Contact = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    message: '',
+  });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
-  };
-  const clearState = () => setState({ ...initialState });
-
-  const myStyle = {
-    fontSize: '20px',
-  };
-  const headerStyle = {
-    fontSize: '28px',
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, email, message);
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
-      .then(
-        (result) => {
-          console.log(result.text);
-          clearState();
+
+    try {
+      console.log('fetching localhost 5000');
+      const response = await fetch('http://localhost:5000/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+        body: JSON.stringify(formData),
+      });
+      console.log('response', response);
+      if (response.ok) {
+        console.log('Form submitted successfully');
+      } else {
+        console.error('Error submitting form');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
+
   return (
     <div>
       <div id="contact">
@@ -47,26 +42,12 @@ export const Contact = (props) => {
               <div className="section-title">
                 <h2>Get In Touch</h2>
                 <p>
-                  Please fill out the form below to send us an email and we will
+                  Please fill out the form below to send us an email, and we will
                   get back to you as soon as possible.
                 </p>
               </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
+              <form name="sentMessage" onSubmit={handleSubmit}>
                 <div className="row">
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="form-control"
-                        placeholder="Name"
-                        required
-                        onChange={handleChange}
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
                   <div className="col-md-6">
                     <div className="form-group">
                       <input
@@ -81,18 +62,19 @@ export const Contact = (props) => {
                       <p className="help-block text-danger"></p>
                     </div>
                   </div>
-                </div>
-                <div className="form-group">
-                  <textarea
-                    name="message"
-                    id="message"
-                    className="form-control"
-                    rows="4"
-                    placeholder="Message"
-                    required
-                    onChange={handleChange}
-                  ></textarea>
-                  <p className="help-block text-danger"></p>
+                  <div className="col-md-6">
+                    <div className="form-group">
+                      <textarea
+                        name="message"
+                        id="message"
+                        className="form-control"
+                        rows="4"
+                        placeholder="Message (optional)"
+                        onChange={handleChange}
+                      ></textarea>
+                      <p className="help-block text-danger"></p>
+                    </div>
+                  </div>
                 </div>
                 <div id="success"></div>
                 <button type="submit" className="btn btn-custom btn-lg">
@@ -101,37 +83,11 @@ export const Contact = (props) => {
               </form>
             </div>
           </div>
-          <div className="col-md-3 col-md-offset-1 contact-info">
-            <div className="contact-item">
-              <h3 style={headerStyle}>Contact Info</h3>
-              <p>
-                <span>
-                  <i className="fa fa-map-marker" style={headerStyle}></i> Address
-                </span>
-                <div style={myStyle}>{props.data ? props.data.address : "loading"}</div>
-              </p>
-            </div>
-            <div className="contact-item">
-              <p>
-                <span>
-                  <i className="fa fa-phone" style={headerStyle}></i> Phone
-                </span>{" "}
-                <div style={myStyle}>{props.data ? props.data.phone : "loading"}</div>
-              </p>
-            </div>
-            <div className="contact-item">
-              <p>
-                <span>
-                  <i className="fa fa-envelope-o" style={headerStyle}></i> Email
-                </span>{" "}
-                <div style={myStyle}>{props.data ? props.data.email : "loading"}</div>
-              </p>
-            </div>
-          </div>
-
+          {/* ... */}
         </div>
       </div>
-
     </div>
   );
 };
+
+export default Contact;

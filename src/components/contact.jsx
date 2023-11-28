@@ -14,19 +14,17 @@ export const Contact = () => {
     e.preventDefault();
 
     try {
-      const postURL =
-        'https://hqwirc3paf.execute-api.us-east-1.amazonaws.com/default/server-attempt?email=' +
-        formData.email +
-        '&message=' +
-        formData.message;
+      console.log("form: " , formData.email, "  " , formData.message);
+      const postURL = 'https://unjg6fah0j.execute-api.us-east-1.amazonaws.com/dev/submit-form?email=' + formData.email + '&message=' + formData.message; 
 
+      console.log(postURL);
       console.log('fetching AWS Lambda function');
+
       const response = await fetch(postURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        // body: JSON.stringify(formData),
       });
 
       console.log('response', response);

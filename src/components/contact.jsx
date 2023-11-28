@@ -14,14 +14,21 @@ export const Contact = () => {
     e.preventDefault();
 
     try {
-      console.log('fetching localhost 5000');
-      const response = await fetch('http://localhost:5000/submit-form', {
+      const postURL =
+        'https://hqwirc3paf.execute-api.us-east-1.amazonaws.com/default/server-attempt?email=' +
+        formData.email +
+        '&message=' +
+        formData.message;
+
+      console.log('fetching AWS Lambda function');
+      const response = await fetch(postURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        // body: JSON.stringify(formData),
       });
+
       console.log('response', response);
       if (response.ok) {
         console.log('Form submitted successfully');

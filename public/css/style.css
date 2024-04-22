@@ -218,9 +218,11 @@ a:focus,
 /* Header Section */
  .intro {
   display: table;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 0;
-  background: url(../img/intro-bg.jpg) center center no-repeat;
+  background: url(../img/intro-bg.jpg);
   background-color: #e5e5e5;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -250,12 +252,12 @@ a:focus,
   line-height: 30px;
   margin: 10 auto;
   margin-top: 20px;
-  margin-bottom: 60px;
 }
 header .intro-text {
   padding-top: 350px;
   padding-bottom: 200px;
-  text-align: center;
+  padding-right: 50px;
+  text-align: right;
 }
 /* Features Section */
 #features {
@@ -268,7 +270,7 @@ header .intro-text {
   color: #fff;
   width: 100px;
   height: 100px;
-  padding: 30px 0;
+  padding: 20px;
   border-radius: 50%;
   background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%); 
   

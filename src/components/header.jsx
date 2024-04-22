@@ -8,27 +8,14 @@ export const Header = (props) => {
   return (
     <header id="header">
       <div className="intro">
-      
+
         <div className="overlay">
-        
+
           <div className="container">
-          
+
             <div className="row">
-              
-              <div className="col-md-8 col-md-offset-2 intro-text">
-              <div className="col-md-4">
-                <div className="video-container">
-                  <iframe
-                    width="412"
-                    height="732"
-                    src="https://www.youtube.com/embed/qTZA4vRrvXw?autoplay=1&loop=1"
-                    title="updateFigv1"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    // allowFullScreen
-                  ></iframe>
-                </div>
-              </div>
+
+              <div className="col-md-8 col-md-offset-2 intro-text" style={{textAlign: "center"}}>
                 <h1>
                   {props.data ? props.data.title : "Loading"}
                   <span></span>
@@ -37,16 +24,17 @@ export const Header = (props) => {
                 <a
                   href="#features"
                   className="btn btn-custom btn-lg page-scroll"
+                  style={{marginTop: "20px", marginBottom: "20px"}}
                 >
                   Learn More
                 </a>{" "}
               </div>
-              
+
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </header >
   );
 };
 

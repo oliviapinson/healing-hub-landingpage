@@ -36,7 +36,7 @@ h5 {
   line-height: 20px;
 }
 p {
-  font-size: 15px;
+  font-size: 22px;
 }
 p.intro {
   margin: 12px 0 0;
@@ -46,6 +46,17 @@ a {
   color: #608dfd;
   font-weight: 400;
 }
+/* Transition */ 
+
+section.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+section.fade-in.visible {
+  opacity: 1;
+}
+
 a:hover,
 a:focus {
   text-decoration: none;
@@ -104,7 +115,7 @@ hr {
   bottom: -1px;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: linear-gradient(to right, #8DD596 10%, #1e7a46 100%);
   content: "";
   transition: width 0.2s;
 }
@@ -125,7 +136,7 @@ hr {
   bottom: -1px !important;
   width: 100% !important;
   height: 2px !important;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%) !important;
+  background: linear-gradient(to right, #8DD596 10%, #1e7a46 100%);
   content: "" !important;
   transition: width 0.2s !important;
 }
@@ -145,14 +156,14 @@ hr {
 }
 .section-title h2 {
   position: relative;
-  margin-top: 10px;
+  margin-top: 50px;
   margin-bottom: 15px;
   padding-bottom: 15px;
 }
 .section-title h2::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background: linear-gradient(to right, #8DD596 10%, #1e7a46 100%);
   height: 4px;
   width: 60px;
   bottom: 0;
@@ -160,18 +171,19 @@ hr {
   left: 50%;
 }
 .section-title p {
-  font-size: 18px;
+  font-size: 25px;
 }
 .btn-custom {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   color: #fff;
   background-color: #5ca9fb;
-  background-image: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  /* background-image: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%); */
+  background: linear-gradient(to right, #8DD596 10%, #1e7a46 100%);
   padding: 14px 34px;
   letter-spacing: 1px;
   margin: 0;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
   border-radius: 25px;
   transition: all 0.5s linear;
@@ -204,7 +216,7 @@ a:focus,
   outline-offset: none;
 }
 /* Header Section */
-.intro {
+ .intro {
   display: table;
   justify-content: center;
   align-items: center;
@@ -216,17 +228,17 @@ a:focus,
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-}
+} 
 .intro .overlay {
   background: rgba(0, 0, 0, 0.2);
 }
 .intro h1 {
   font-family: "Raleway", sans-serif;
   color: #fff;
-  font-size: 62px;
+  font-size: 85px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-top: 0;
+  margin-top: -100px;
   margin-bottom: 10px;
 }
 .intro h1 span {
@@ -235,11 +247,11 @@ a:focus,
 }
 .intro p {
   color: #fff;
-  font-size: 22px;
+  font-size: 27px;
   font-weight: 300;
   line-height: 30px;
-  /* margin: 0 auto; */
-  margin-bottom: 60px;
+  margin: 10 auto;
+  margin-top: 20px;
 }
 header .intro-text {
   padding-top: 350px;
@@ -260,12 +272,14 @@ header .intro-text {
   height: 100px;
   padding: 20px;
   border-radius: 50%;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%); 
+  
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
 /* About Section */
 #about {
   padding: 100px 0;
+
 }
 #about h3 {
   font-size: 22px;
@@ -279,7 +293,8 @@ header .intro-text {
 #about h2::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background: linear-gradient(to right, #8DD596 10%, #1e7a46 100%);
+  
   height: 4px;
   width: 60px;
   bottom: 0;
@@ -313,7 +328,7 @@ header .intro-text {
 /* Services Section */
 #services {
   padding: 100px 0;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: linear-gradient(to right, #8DD596 10%, #1e7a46 100%);
   color: #fff;
 }
 #services .service-desc {
@@ -337,7 +352,7 @@ header .intro-text {
   width: 120px;
   height: 120px;
   padding: 40px 0;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: linear-gradient(to right, #8DD596 10%, #1e7a46 100%);
   border-radius: 50%;
   color: #fff;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
@@ -444,7 +459,8 @@ header .intro-text {
 }
 /* Team Section */
 #team {
-  padding: 100px 0;
+  padding: 30px 0;
+  background-color: #e0f2e2;
 }
 #team h4 {
   margin: 5px 0;
@@ -463,7 +479,7 @@ header .intro-text {
 /* Contact Section */
 #contact {
   padding: 100px 0 60px;
-  background-color: #8DD596;
+  background-color: #1e4223;
   color: rgba(255, 255, 255, 0.75);
 }
 #contact .section-title {
